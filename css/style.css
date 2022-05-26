@@ -140,9 +140,8 @@ input:focus {
 }
 
 .date{
-    z-index: 100;
-    color: #6979a7;
-    background-color: #f1efef;
+    color: #f1efef;
+    background-color: #6979a7;;
     margin-left: 10px;
     padding: 3px 10px;
     font-size: 12px;
@@ -150,6 +149,7 @@ input:focus {
     text-align: left;
     position: absolute;
     top: -12px;
+    border-radius: 3px;
 }
 
 #list-container li:nth-child(1){
