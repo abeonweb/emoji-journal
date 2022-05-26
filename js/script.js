@@ -67,11 +67,11 @@ function log(value) {
  */
 saveBtn.addEventListener("click", function () {
   if (inputEl.value) {
-    //recent date
-    // const currentDate = new Date();//comment out if testing
+    //recent date.
+    const currentDate = new Date();
 
-    //manipulate current date below to test other days
-    const currentDate = new Date(2022,4,10,3,55,0);
+    //manipulate currentDate below to test other days
+    //currentDate = new Date(2022,4,10,3,55,0);
 
     let storedJournal = storage.getItem("journal"); //try to retrieve from storage
     if (storedJournal) {
