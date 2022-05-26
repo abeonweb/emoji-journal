@@ -133,7 +133,7 @@ input:focus {
 
 #list-container li{
     list-style: none;
-    padding: 15px 20px 20px;
+    padding: 20px;
     position: relative;
     border-bottom: 1px solid #6979a7;
 
@@ -161,6 +161,7 @@ input:focus {
 .entry{
     font-size: 25px;
     text-align: left;
+    padding: 8px;
 }
 
 footer{
