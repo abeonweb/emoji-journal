@@ -12,7 +12,14 @@ let journal = []; //array to store entries objects
 
 let entry = {}; //entry info to display
 
-renderEmojis();
+/*********** Date Manipulation ***********/
+//recent date
+let currentDate = new Date(); //used let for testing purposes
+/******uncomment below when testing******/
+// currentDate = new Date(2022,7,5,17,34,12);
+
+//manipulate the date below to test other days
+
 
 /**
  * @param value emoji value passed to the function
@@ -45,16 +52,9 @@ function CreateEntry(timeInput) {
 	entry.day = dayofWeek(entry.dayInNumber);
 }
 
-/*********** Date Manipulation ***********/
-//recent date
-let currentDate = new Date(); //used let for testing purposes
-/******uncomment below when testing******/
-// currentDate = new Date(2022,7,5,17,34,12);
-
-//manipulate the date below to test other days
 
 
-inpuContainer.addEventListener("click", function (event) {
+function handleSubmit(event) {
 	event.preventDefault()
 	const journal = localStorage.getItem("journal")=== null? [] : JSON.parse(localStorage.getItem("journal"))
 	let val = inputEl.value;
@@ -89,8 +89,7 @@ inpuContainer.addEventListener("click", function (event) {
 		storage.setItem("journal", JSON.stringify(journal));
 		renderJournal();
 	}
-});
-
+}
 
 
 function renderJournal() {
@@ -139,8 +138,6 @@ function renderJournal() {
 	listContainer.innerHTML = entries;
 }
 
-
-
 /**
  * helper function for CreateEntry
  * @param  num day of the week
@@ -166,6 +163,10 @@ function dayofWeek(num) {
 	}
 }
 
+//===================== Event Listeners & Function Calls========================
+
+renderEmojis();
+
 /**
  * load previous journal data, if available
  */
@@ -181,8 +182,17 @@ deleteAll.addEventListener("dblclick", function () {
 	renderJournal();
 });
 
+/**
+* listen for click on container and pass focus to input element
+*/
 emojiContainer.addEventListener("click", function (event) {
 	if (event.target.classList.contains("emoji-value")) {
 		emojiToInput(event.target.value)
+		inputEl.focus()
 	}
 });
+
+/**
+* listen for click on container and add to current journal entry
+*/
+inpuContainer.addEventListener("click", handleSubmit);
