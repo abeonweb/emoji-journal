@@ -3,7 +3,7 @@ import { emojis } from "./data.js";
 const emojiContainer = document.querySelector("#emoji-container");
 const listContainer = document.querySelector("#journal-list");
 const inputEl = document.querySelector(".input-el");
-const saveBtn = document.querySelector(".save-btn");
+const inputContainer = document.querySelector(".input-container");
 const deleteAll = document.querySelector(".delete-btn");
 let storage = window.localStorage;
 
@@ -54,7 +54,8 @@ let currentDate = new Date(); //used let for testing purposes
 //manipulate the date below to test other days
 
 
-saveBtn.addEventListener("click", function () {
+inpuContainer.addEventListener("click", function (event) {
+	event.preventDefault()
 	const journal = localStorage.getItem("journal")=== null? [] : JSON.parse(localStorage.getItem("journal"))
 	let val = inputEl.value;
 	if (val) {
