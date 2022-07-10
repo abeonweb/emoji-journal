@@ -25,21 +25,18 @@ p{
     margin:0;
 }
 
-h1 {
+.title {
     font-size: 2.5rem;
     font-weight: 700;
     padding-bottom: 0.2em;
-}
-
-.title {
     background-image: linear-gradient(
                         60deg, 
                         #ff09d3,
                         #f4fdce,
                         #970819
                         );
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -113,7 +110,6 @@ input:focus {
 
 #emoji-container{
     padding: 5px 3px;
-    width: 80%;
     max-width: 450px;
     margin: 0.5em auto;
     max-height:12rem;
@@ -267,7 +263,7 @@ button:hover{
 Media Queries
 *************/
 @media screen and (min-width: 650px){
-    h1{
+    .title {
         font-size: 3rem;
     }
 
