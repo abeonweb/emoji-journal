@@ -21,7 +21,7 @@ body{
 Typography
 *************/
 h1 {
-    font-size: 3.6em;
+    font-size: 3em;
     font-weight: 700;
     margin:0;
 }
@@ -238,6 +238,10 @@ button:focus{
 Media Queries
 *************/
 @media screen and (max-width: 750px){
+    h1{
+        font-size: 3.6rem;
+    }
+    
     main{
         flex-direction: column;
         margin: auto;
