@@ -1,9 +1,7 @@
 import { emojis } from "./data.js";
 
-const bodyEl = document.querySelector(".body-el");
 const emojiContainer = document.querySelector("#emoji-container");
 const listContainer = document.querySelector("#journal-list");
-const emojiAll = document.querySelectorAll(".emoji");
 const inputEl = document.querySelector(".input-el");
 const saveBtn = document.querySelector(".save-btn");
 const deleteAll = document.querySelector(".delete-btn");
@@ -27,16 +25,11 @@ function emojiToInput(value) {
 	}
 }
 
-emojiContainer.addEventListener("click", function (event) {
-	if (event.target.classList.contains("emoji-value")) {
-		emojiToInput(event.target.value)
-	}
-})
 
 function renderEmojis() {
 	let btnString = "";
 	for (let i = 0; i < emojis.length; i++) {
-		btnString += `<button class="emoji-value" value="${emojis[i]}">${emojis[i]}</button>`;
+		btnString += `<button class="emoji-value" value="${emojis[i]}" type="submit">${emojis[i]}</button>`;
 	}
 	emojiContainer.innerHTML = btnString;
 }
@@ -62,9 +55,9 @@ let currentDate = new Date(); //used let for testing purposes
 
 
 saveBtn.addEventListener("click", function () {
+	const journal = localStorage.getItem("journal")=== null? [] : JSON.parse(localStorage.getItem("journal"))
 	let val = inputEl.value;
 	if (val) {
-
 		if (journal.length > 0) {
 			entry = journal.pop();
 			const {
@@ -100,6 +93,7 @@ saveBtn.addEventListener("click", function () {
 
 
 function renderJournal() {
+	const journal = localStorage.getItem("journal")=== null? [] : JSON.parse(localStorage.getItem("journal"))
 	let entries = "";
 	for (let j = journal.length - 1; j >= 0; j--) {
 		let moodStr = "";
@@ -174,14 +168,7 @@ function dayofWeek(num) {
 /**
  * load previous journal data, if available
  */
-window.addEventListener("load", function () {
-	if (storage.getItem("journal")) {
-		journal = JSON.parse(storage.getItem("journal"));
-	} else {
-		journal = [];
-	}
-	renderJournal();
-});
+window.addEventListener("load", renderJournal);
 
 /**
  * delete everything with a double click
@@ -191,4 +178,10 @@ deleteAll.addEventListener("dblclick", function () {
 	entry = {};
 	storage.removeItem("journal");
 	renderJournal();
+});
+
+emojiContainer.addEventListener("click", function (event) {
+	if (event.target.classList.contains("emoji-value")) {
+		emojiToInput(event.target.value)
+	}
 });
