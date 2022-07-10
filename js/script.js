@@ -195,4 +195,4 @@ emojiContainer.addEventListener("click", function (event) {
 /**
 * listen for click on container and add to current journal entry
 */
-inpuContainer.addEventListener("click", handleSubmit);
+inputContainer.addEventListener("click", handleSubmit);
