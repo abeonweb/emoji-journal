@@ -28,6 +28,7 @@ p{
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
+    padding-bottom: 0.2em;
 }
 
 .title {
@@ -123,7 +124,7 @@ input:focus {
     background-color: rgba(255,255,255,0.6);
 }
 
-.emoji {
+.emoji-value {
     font-size: 1.3rem;
     margin: 3px;
     padding: 5px;
@@ -132,7 +133,7 @@ input:focus {
     background-color: rgba(255,255,255,0);
 }
 
-.emoji:hover{
+.emoji-value:hover{
     box-shadow: 1px 2px 4px rgba(67, 67, 67, 0.2);
 }
 
