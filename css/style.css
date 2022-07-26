@@ -1,0 +1,277 @@
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, 
+                            #0ed9be 20%, 
+                            #FFFFFF 73.77%);
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+/*************
+Typography
+*************/
+h1,
+p{
+    margin:0;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 0.2em;
+    background-image: linear-gradient(
+                        60deg, 
+                        #ff09d3,
+                        #f4fdce,
+                        #970819
+                        );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subheading {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.07em;
+}
+
+
+.highlight-1 {
+    color: #ff0;
+}
+
+.highlight-2 {
+    color: #ff1ad6;
+}
+
+.journal-title{
+    color: #6979a7;
+    font-size: 1.125rem;
+    margin: 0.6em 0;
+    
+}
+
+/******
+Layout
+******/
+.body-el{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header{
+    padding: 1em 0.6em 1em;
+}
+
+.container{
+    width: 95%;
+    max-width: 900px;
+    margin:0 auto;
+    padding: 0.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 80%;
+    max-width: 450px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.4em;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+input:focus {
+    outline: 3px solid #6979a7;
+}
+
+#emoji-container{
+    padding: 5px 3px;
+    max-width: 450px;
+    margin: 0.5em auto;
+    max-height:12rem;
+    border: 1px solid rgb(105, 121, 167, 0.7);
+    border-radius: 4px;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.emoji-value {
+    font-size: 1.3rem;
+    margin: 3px;
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0);
+}
+
+.emoji-value:hover{
+    box-shadow: 1px 2px 4px rgba(67, 67, 67, 0.2);
+}
+
+.journal-container{
+    border: 2px solid #6979a7;
+    border-radius: 6px;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+#journal-list {
+    min-height: 10vh;
+    padding: 1em 1em 0;
+    display: block;
+    margin:0;
+}
+
+#journal-list li{
+    list-style: none;
+    padding: 1.3em 1.25em 2em;
+    position: relative;
+    border-bottom: 2px solid #6979a7;
+
+}
+
+#journal-list li:nth-child(1){
+    border: none;
+    border-top: 2px solid #6979a7;
+    border-bottom: 2px solid #6979a7;
+}
+
+#journal-list li:last-child{
+    border-bottom: none;
+    padding-bottom: none;
+}
+
+.date{
+    z-index: 1;
+    color: #6979a7;
+    background-color: #ffffff;
+    margin-left: 10px;
+    padding: 3px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+    position: absolute;
+    top: -12px;
+    border-radius: 5px;
+    box-shadow:1px 1px 4px #242e4d;
+}
+
+
+.entry{
+    font-size: 25px;
+    text-align: left;
+}
+
+footer{
+    background: #242e4d;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin: 0;
+    padding: 30px; 
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+/********
+Scrollbar
+********/
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #6979a7;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #6979a7;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #242e4d;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #34436e;
+}
+
+/******
+BUTTON
+******/
+button:focus,
+button:hover{
+    outline: none;
+}
+
+.btn{
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+}
+
+.save-btn {
+    padding: 15px 40px;
+    background-color: #6979a7;    
+    margin: 0 0 2em;
+}
+
+.save-btn:hover {
+    background-color: #7d8fc4;
+}
+
+
+.delete-btn {
+    font-size: 0.6em;
+    padding: 10px 20px;
+    background-color: #aa0606;
+    padding: 10px 20px;
+    margin: 100px 0 20px;
+}
+.delete-btn:hover {
+    background-color: #d30808;
+}
+
+
+/*************
+Media Queries
+*************/
+@media screen and (min-width: 650px){
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .subheading{
+        font-size: 1rem;
+    }
+
+    header{
+        padding-bottom: 4em;
+    }
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset = "utf-8">
+    <title>Emoji Journal</title>
+    <link href="favicon-16x16.png" rel="icon" type="image/x-icon">
+    <meta name="viewport" content="width= device-width, initial-scale=1.0">
+    <meta name="author" content="Abiodun Abe Oke">
+    <meta name="description" content="How to use JavaScript to create elements,append to a html document ">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/script.js" type="module" defer></script>
+</head>
+
+<body class="body-el">
+    <header>
+        <div class="container">
+            <h1 class="title">emoji journal</h1>
+            <p class="subheading">use <span class="highlight-1">emojis</span> to track your day and <span class="highlight-2">mood</span>.</p>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form action="" class="input-form-container">
+                <input title="Use any emoji or choose from below" type="text" class="input-el" placeholder="Enter an emoji 😀">
+                <button type="submit" class="btn save-btn">save</button>
+            </form>
+            <div id="emoji-container"></div>
+            <div class="journal-container">
+                <h2 class="journal-title">Journal</h2>
+                <ul id="journal-list"></ul>
+            </div>
+
+            <button class="btn delete-btn">delete all</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; Master Contender 2022</p>
+    </footer>
+</body>
+
+</html>
